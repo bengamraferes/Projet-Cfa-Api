@@ -1,0 +1,51 @@
+2022-03-03 09:17:16.856  INFO 4876 --- [main] fr.dawan.cfa2022.Cfa2022Application      : Starting Cfa2022Application on JMoh-PC with PID 4876 (D:\hubiC\Documents\FORMATIONS\SPRING_BOOT\workspaceCFA2022\cfa2022-trainer\target\classes started by Mohamed in D:\hubiC\Documents\FORMATIONS\SPRING_BOOT\workspaceCFA2022\cfa2022-trainer)
+2022-03-03 09:17:16.870  INFO 4876 --- [main] fr.dawan.cfa2022.Cfa2022Application      : No active profile set, falling back to default profiles: default
+2022-03-03 09:17:18.045  INFO 4876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-03-03 09:17:18.186  INFO 4876 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130ms. Found 3 JPA repository interfaces.
+2022-03-03 09:17:19.350  INFO 4876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-03 09:17:19.369  INFO 4876 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-03 09:17:19.369  INFO 4876 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2022-03-03 09:17:19.519  INFO 4876 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-03 09:17:19.519  INFO 4876 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2580 ms
+2022-03-03 09:17:19.742  INFO 4876 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-03 09:17:19.830  INFO 4876 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-03 09:17:19.931  INFO 4876 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2022-03-03 09:17:20.116  INFO 4876 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2022-03-03 09:17:20.118  WARN 4876 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-03 09:17:20.369  INFO 4876 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-03 09:17:20.483  INFO 4876 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-03 09:17:20.505  INFO 4876 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-03-03 09:17:21.181  INFO 4876 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 09:17:21.184  INFO 4876 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2022-03-03 09:17:21.880  INFO 4876 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-03 09:17:21.893  INFO 4876 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-03 09:17:22.577  INFO 4876 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2022-03-03 09:17:22.613  INFO 4876 --- [main] fr.dawan.cfa2022.Cfa2022Application      : Started Cfa2022Application in 6.285 seconds (JVM running for 8.055)
+2022-03-03 09:17:44.027  INFO 194500 --- [main] fr.dawan.cfa2022.Cfa2022Application      : Starting Cfa2022Application on JMoh-PC with PID 194500 (D:\hubiC\Documents\FORMATIONS\SPRING_BOOT\workspaceCFA2022\cfa2022-trainer\target\classes started by Mohamed in D:\hubiC\Documents\FORMATIONS\SPRING_BOOT\workspaceCFA2022\cfa2022-trainer)
+2022-03-03 09:17:44.031  INFO 194500 --- [main] fr.dawan.cfa2022.Cfa2022Application      : No active profile set, falling back to default profiles: default
+2022-03-03 09:17:44.969  INFO 194500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2022-03-03 09:17:45.061  INFO 194500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79ms. Found 3 JPA repository interfaces.
+2022-03-03 09:17:46.080  INFO 194500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-03-03 09:17:46.090  INFO 194500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-03 09:17:46.090  INFO 194500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2022-03-03 09:17:46.188  INFO 194500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-03 09:17:46.188  INFO 194500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2111 ms
+2022-03-03 09:17:46.408  INFO 194500 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-03 09:17:46.512  INFO 194500 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-03 09:17:46.581  INFO 194500 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.17.Final
+2022-03-03 09:17:46.838  WARN 194500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-03 09:17:46.841  INFO 194500 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2022-03-03 09:17:46.961  INFO 194500 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-03 09:17:47.021  INFO 194500 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-03 09:17:47.040  INFO 194500 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2022-03-03 09:17:47.705  INFO 194500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-03-03 09:17:47.708  INFO 194500 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2022-03-03 09:17:48.158  INFO 194500 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-03 09:17:48.180  INFO 194500 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-03 09:17:48.756  INFO 194500 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2022-03-03 09:17:48.770  INFO 194500 --- [main] fr.dawan.cfa2022.Cfa2022Application      : Started Cfa2022Application in 5.209 seconds (JVM running for 6.879)
+2022-03-03 09:23:52.496  INFO 194500 --- [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-03-03 09:23:52.937  INFO 194500 --- [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-03-03 09:23:52.942  INFO 194500 --- [RMI TCP Connection(14)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-03-03 09:23:52.944  INFO 194500 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-03-03 09:23:52.954  INFO 194500 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

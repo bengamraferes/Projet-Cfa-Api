@@ -1,0 +1,10 @@
+fr.dawan.cfa2022
+fr.dawan.cfa2022.controllers
+fr.dawan.cfa2022.dto
+fr.dawan.cfa2022.entities
+fr.dawan.cfa2022.exceptions
+fr.dawan.cfa2022.interceptors
+fr.dawan.cfa2022.repositories
+fr.dawan.cfa2022.services
+fr.dawan.cfa2022.tasks
+fr.dawan.cfa2022.tools
