@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import fr.dawan.cfa2022.dto.CountDto;
+import fr.dawan.cfa2022.dto.StringDto;
 import fr.dawan.cfa2022.services.GenericService;
 
 public abstract class GenericController<TDto> {
@@ -29,12 +30,12 @@ public abstract class GenericController<TDto> {
 		return service.getById(id);
 	}
 	@DeleteMapping(value = "/{id}", produces = "text/plain")
-	public ResponseEntity<String> deleteById(@PathVariable(value = "id") long id) {
+	public ResponseEntity<StringDto> deleteById(@PathVariable(value = "id") long id) {
 		try {
 			service.delete(id);
-			return ResponseEntity.status(HttpStatus.OK).body("suppression effectuée");
+			return ResponseEntity.status(HttpStatus.OK).body(new StringDto("suppression effectuée"));
 		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("suppression non réalisée");
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new StringDto("suppression non réalisée"));
 		}
 
 	}

@@ -16,6 +16,22 @@ public class BlocCompetencesDto implements Serializable  {
 	private long titreProfessionnelId;
 
 	private int version;
+	
+	
+	public BlocCompetencesDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public BlocCompetencesDto(long id, String titre, String description, long titreProfessionnelId, int version) {
+		super();
+		this.id = id;
+		this.titre = titre;
+		this.description = description;
+		this.titreProfessionnelId = titreProfessionnelId;
+		this.version = version;
+	}
+
 	public long getId() {
 		return id;
 	}

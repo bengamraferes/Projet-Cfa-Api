@@ -5,10 +5,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import fr.dawan.cfa2022.dto.CountDto;
@@ -17,6 +19,7 @@ import fr.dawan.cfa2022.dto.EtudiantDto;
 import fr.dawan.cfa2022.dto.UtilisateurDto;
 import fr.dawan.cfa2022.entities.Etudiant;
 import fr.dawan.cfa2022.entities.Promotion;
+import fr.dawan.cfa2022.entities.Utilisateur;
 import fr.dawan.cfa2022.entities.Utilisateur.Role;
 import fr.dawan.cfa2022.repositories.EtudiantRepository;
 import fr.dawan.cfa2022.repositories.PromotionRepository;
@@ -97,6 +100,19 @@ public class EtudiantServiceImpl implements EtudiantService {
 		}
 		return etudiantsDto;
 	
+	}
+	@Override
+	public List<EtudiantDto> getAll(int page, int max, String search) {
+		List<Etudiant> etudiants = etudiantRepository
+				.findAllByFirstNameContainingOrLastNameContainingOrEmailContaining(search, search, search,
+						PageRequest.of(page, max))
+				.get().collect(Collectors.toList());
+
+		List<EtudiantDto> etudiantsDto = new ArrayList<EtudiantDto>();
+		for (Etudiant etudiant : etudiants) {
+			etudiantsDto.add(DtoTools.convert(etudiant, EtudiantDto.class));
+		}
+		return etudiantsDto;
 	}
 
 	

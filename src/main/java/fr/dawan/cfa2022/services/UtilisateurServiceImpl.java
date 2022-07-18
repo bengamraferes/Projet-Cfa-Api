@@ -21,6 +21,7 @@ import fr.dawan.cfa2022.dto.LoginDto;
 import fr.dawan.cfa2022.dto.LoginResponseDto;
 import fr.dawan.cfa2022.dto.UtilisateurDto;
 import fr.dawan.cfa2022.entities.Utilisateur;
+import fr.dawan.cfa2022.entities.Utilisateur.Role;
 import fr.dawan.cfa2022.repositories.UtilisateurRepository;
 import fr.dawan.cfa2022.tools.HashTools;
 import fr.dawan.cfa2022.tools.JwtTokenUtil;
@@ -159,6 +160,18 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public List<UtilisateurDto> getByRole(Role role) {
+
+		List<Utilisateur> utilisateurs = utilisateurRepository.findByRole(role);
+		List<UtilisateurDto> utilisateursDto = new ArrayList<UtilisateurDto>();
+		for (Utilisateur utilisateur : utilisateurs) {
+			utilisateursDto.add(DtoTools.convert(utilisateur, UtilisateurDto.class));
+		}
+		return utilisateursDto;
+
 	}
 
 }

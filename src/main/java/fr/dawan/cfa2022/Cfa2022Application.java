@@ -39,6 +39,7 @@ public class Cfa2022Application {
 				registry.addMapping("/**")
 				  .allowedOrigins("*")
 				  .allowedMethods("GET","POST","PUT","DELETE","PATCH","OPTIONS");
+				
 			}
 			
 		};

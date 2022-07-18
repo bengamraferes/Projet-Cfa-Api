@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.dawan.cfa2022.dto.UtilisateurDto;
-
+import fr.dawan.cfa2022.entities.Utilisateur.Role;
 import fr.dawan.cfa2022.services.UtilisateurService;
 
 @RestController
@@ -25,6 +25,13 @@ public class UtilisateurController extends GenericController<UtilisateurDto> {
 	public List<UtilisateurDto> getAll() {
 		return ((UtilisateurService) service).getAll();
 	}
+	
+	@GetMapping(value = "/role/{role}", produces = "application/json")
+	public List<UtilisateurDto> getByRole(@PathVariable("role") String roleS) {
+		Role role =  Role.valueOf(roleS);
+		return ((UtilisateurService) service).getByRole(role);
+	}
+	
 	@GetMapping(value= {"/{page}/{size}", "/{page}/{size}/{search}"}, produces = "application/json")
 	public List<UtilisateurDto> getAllByPage(
 							@PathVariable("page") int page, 

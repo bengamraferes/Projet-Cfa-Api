@@ -22,6 +22,11 @@ public class PromotionDto implements Serializable  {
 
 	private long versionId;
 	
+	private String villeNom;
+	
+	private String titreProfessionnelTitre;
+	
+	
 	private List<Long> etudiantsId;
 	
 	
@@ -79,6 +84,22 @@ public class PromotionDto implements Serializable  {
 
 	public void setVersionId(long versionId) {
 		this.versionId = versionId;
+	}
+
+	public String getVilleNom() {
+		return villeNom;
+	}
+
+	public void setVilleNom(String villeNom) {
+		this.villeNom = villeNom;
+	}
+
+	public String getTitreProfessionnelTitre() {
+		return titreProfessionnelTitre;
+	}
+
+	public void setTitreProfessionnelTitre(String titreProfessionnelTitre) {
+		this.titreProfessionnelTitre = titreProfessionnelTitre;
 	}
 
 

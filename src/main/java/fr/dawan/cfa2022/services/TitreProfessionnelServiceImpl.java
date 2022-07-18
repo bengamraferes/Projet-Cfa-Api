@@ -82,7 +82,48 @@ public class TitreProfessionnelServiceImpl implements TitreProfessionnelService{
 
 		return null;
 	}
-
+//	@Override
+//	public int importFromDG2() throws Exception {
+//		RestTemplate restTemplate = new RestTemplate();// objet permettant de faire des requêtes HTTP
+//
+//		ObjectMapper mapper = new ObjectMapper(); // objet de la librairie Jackson permettant de convertir de json>objet
+//		mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+//		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+//		mapper.configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES, false);
+//
+//		ResponseEntity<String> rep = restTemplate
+//				.getForEntity("https://dawan.org/public/training/search?keywords=titre-professionnel", String.class);// req
+//
+//		// GET
+//		int nb = 0;
+//		if (rep.getStatusCode() == HttpStatus.OK) {
+//			
+//			TypeReference<Map<String,DG2TitreProDto>> typeRef = new TypeReference<Map<String,DG2TitreProDto>>(){}; 
+//			
+//			Map<String,DG2TitreProDto> results = mapper.readValue(rep.getBody(), typeRef);
+//			for(String key : results.keySet()) {
+//				DG2TitreProDto titreProResult = results.get(key);
+//				DG2TrainingDto trainingObj = titreProResult.getTraining();
+//				
+//				TitreProfessionnel tp = new TitreProfessionnel();
+//				tp.setTitre(trainingObj.getTitle());
+//				tp.setSlug(trainingObj.getSlug());
+//				
+//				TitreProfessionnel v = null;
+//				try {
+//					v = repository.findBySlug(tp.getSlug());
+//
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//				if (v == null) {
+//					repository.saveAndFlush(tp);
+//					nb++;
+//				}
+//			}
+//		}
+//		return nb;
+//	}
 	
 
 
