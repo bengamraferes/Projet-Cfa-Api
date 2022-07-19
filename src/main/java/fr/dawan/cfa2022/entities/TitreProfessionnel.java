@@ -20,6 +20,7 @@ public class TitreProfessionnel implements Serializable {
 	@Column(nullable = false, unique = true )
 	private String titre;
 	
+	private String slug;
 	@Version
 	private int version;
 
@@ -45,6 +46,14 @@ public class TitreProfessionnel implements Serializable {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+
+	public String getSlug() {
+		return slug;
+	}
+
+	public void setSlug(String slug) {
+		slug = slug;
 	}
 	
 	

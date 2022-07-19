@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.dawan.cfa2022.dto.CountDto;
 import fr.dawan.cfa2022.dto.TitreProfessionnelDto;
 import fr.dawan.cfa2022.services.TitreProfessionnelService;
+import fr.dawan.cfa2022.services.VilleService;
 
 @RestController
 @RequestMapping("/titresProfessionnel")
@@ -37,5 +39,12 @@ public class TitreProfessionnelController extends GenericController<TitreProfess
 			return ((TitreProfessionnelService) service).getAll(page-1, max, search.get());
 		else
 			return ((TitreProfessionnelService) service).getAll(page-1, max, "");
+	}
+	@GetMapping(value="/dg2", produces = "application/json")
+	public CountDto updateFromDG2() throws Exception {
+		 int nb =((TitreProfessionnelService) service).importFromDG2();
+		 CountDto result = new CountDto();
+		 result.setNb(nb);
+		 return result;
 	}
 }

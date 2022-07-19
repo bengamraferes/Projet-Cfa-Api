@@ -71,7 +71,7 @@ public class PromotionServiceImpl implements PromotionService{
 
 	@Override
 	public List<PromotionDto> getAll() {
-		List<Promotion> promotions = promotionRepository.getAll();
+		List<Promotion> promotions = promotionRepository.findAll();
 		List<PromotionDto> result = new ArrayList<PromotionDto>();
 		for (Promotion p : promotions) {
 			result.add(DtoTools.convert(p, PromotionDto.class));

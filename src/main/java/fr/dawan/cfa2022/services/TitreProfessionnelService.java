@@ -12,4 +12,6 @@ public interface TitreProfessionnelService extends GenericService<TitreProfessio
 	List<TitreProfessionnelDto> getAll(int page, int max, String search);
 	
 	TitreProfessionnelDto getTitreProfessionnelByPromotionId( long promotionId );
+	
+	 int importFromDG2() throws Exception;
 }

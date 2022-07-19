@@ -83,7 +83,11 @@ public class EtudiantServiceImpl implements EtudiantService {
 	@Override
 	public CountDto count(String search) {
 		
-		return utilisateurService.count(search);
+		long nb = etudiantRepository.countByFirstNameContainingOrLastNameContainingOrEmailContaining(search, search,
+				search);
+		CountDto d = new CountDto();
+		d.setNb(nb);
+		return d;
 	}
 
 	@Override

@@ -21,4 +21,6 @@ public interface EtudiantRepository extends JpaRepository<Etudiant, Long> {
 	Page<Etudiant> findAllByFirstNameContainingOrLastNameContainingOrEmailContaining(
 			String firstName, String lastName, String email, Pageable pageable);
 
+	long countByFirstNameContainingOrLastNameContainingOrEmailContaining(String search, String search2, String search3);
+
 }

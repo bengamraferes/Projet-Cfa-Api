@@ -23,5 +23,7 @@ public interface TitreProfessionnelRepository  extends JpaRepository<TitreProfes
 	
 	@Query("SELECT p.titreProfessionnel FROM TitreProfessionnel t JOIN Promotion p ON  p.id = :promotionId")
 	Optional<TitreProfessionnel> getTitreProfessionnelByPromotionId(@Param("promotionId") long promotionId );
+
+	TitreProfessionnel findBySlug(String slug);
 	
 }

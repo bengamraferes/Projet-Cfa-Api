@@ -44,11 +44,10 @@ public class GeneratorController {
 		//Pour afficher un boite de téléchargement dans une réponse web au lieu de changer de page, nous devons
 		//spécifier un header : Content-Disposition, attachment;filename=app.log
 		HttpHeaders headers = new HttpHeaders();
-		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=app.log");
+		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=Bultin.pdf");
 		headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
 		headers.add("Pragma", "no-cache");
 		headers.add("Expires", "0");
-		headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=app.log");
 		
 		return ResponseEntity.ok()
 				.headers(headers).contentLength(f.length()).contentType(MediaType.APPLICATION_OCTET_STREAM).body(resource);

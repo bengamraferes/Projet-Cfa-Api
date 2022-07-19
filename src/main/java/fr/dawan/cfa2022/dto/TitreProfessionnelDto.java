@@ -10,6 +10,8 @@ public class TitreProfessionnelDto implements Serializable {
 
 	private String titre;
 	
+	private String slug;
+
 
 	private int version;
 
@@ -37,6 +39,15 @@ public class TitreProfessionnelDto implements Serializable {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+
+	public String getSlug() {
+		return slug;
+	}
+
+	public void setSlug(String slug) {
+		this.slug = slug;
+	}
+	
 	
 	
 }

@@ -70,7 +70,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 					u.setPassword(HashTools.hashSHA512(u.getPassword()));
 				}
 			}
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
