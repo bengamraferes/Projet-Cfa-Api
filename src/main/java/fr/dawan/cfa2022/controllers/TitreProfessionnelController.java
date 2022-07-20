@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.dawan.cfa2022.dto.CountDto;
 import fr.dawan.cfa2022.dto.TitreProfessionnelDto;
 import fr.dawan.cfa2022.services.TitreProfessionnelService;
-import fr.dawan.cfa2022.services.VilleService;
 
 @RestController
 @RequestMapping("/titresProfessionnel")

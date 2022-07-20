@@ -7,11 +7,9 @@ public class TitreProfessionnelDto implements Serializable {
 	
 	private long id;
 	
-
 	private String titre;
 	
 	private String slug;
-
 
 	private int version;
 

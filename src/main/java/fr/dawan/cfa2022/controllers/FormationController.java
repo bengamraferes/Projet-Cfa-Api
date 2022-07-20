@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.dawan.cfa2022.dto.CountDto;
 import fr.dawan.cfa2022.dto.FormationDto;
 import fr.dawan.cfa2022.services.FormationService;
+import fr.dawan.cfa2022.services.TitreProfessionnelService;
 
 @RestController
 @RequestMapping("/formations")
@@ -23,6 +25,13 @@ public class FormationController extends GenericController<FormationDto> {
 	@GetMapping(produces = "application/json")
 	public List<FormationDto> getAll( ) {
 		return ((FormationService) service).getAll();
+	}
+	@GetMapping(value="/dg2", produces = "application/json")
+	public CountDto updateFromDG2() throws Exception {
+		 int nb =((FormationService) service).updateFromDg2();
+		 CountDto result = new CountDto();
+		 result.setNb(nb);
+		 return result;
 	}
 	@GetMapping(value= {"/{page}/{size}", "/{page}/{size}/{search}"}, produces = "application/json")
 	public List<FormationDto> getAllByPage(

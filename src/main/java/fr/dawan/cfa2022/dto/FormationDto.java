@@ -10,7 +10,7 @@ private long id;
 	
 	private String titre;
 	
-	private int duree;
+	private Double duree;
 	
 	private String objectifsPedagogique;
 
@@ -35,11 +35,11 @@ private long id;
 		this.titre = titre;
 	}
 
-	public int getDuree() {
+	public Double getDuree() {
 		return duree;
 	}
 
-	public void setDuree(int duree) {
+	public void setDuree(Double duree) {
 		this.duree = duree;
 	}
 

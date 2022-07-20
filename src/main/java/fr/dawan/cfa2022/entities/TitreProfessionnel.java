@@ -53,7 +53,7 @@ public class TitreProfessionnel implements Serializable {
 	}
 
 	public void setSlug(String slug) {
-		slug = slug;
+		this.slug = slug;
 	}
 	
 	

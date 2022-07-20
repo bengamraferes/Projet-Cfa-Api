@@ -9,10 +9,8 @@ public class BlocCompetencesDto implements Serializable  {
 	
 	private String titre;
 	
-	
 	private String description;
 	
-
 	private long titreProfessionnelId;
 
 	private int version;
@@ -63,7 +61,6 @@ public class BlocCompetencesDto implements Serializable  {
 	public void setVersion(int version) {
 		this.version = version;
 	}
-	
 	
 	
 }

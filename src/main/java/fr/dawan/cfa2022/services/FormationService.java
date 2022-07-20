@@ -10,4 +10,6 @@ public interface FormationService extends GenericService<FormationDto>{
 	
 	List<FormationDto> getAll(int page, int max, String search);
 	
+	int updateFromDg2() throws Exception;
+	
 }

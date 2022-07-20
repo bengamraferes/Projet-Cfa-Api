@@ -16,13 +16,13 @@ public class Formation implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String titre;
 
 	@Column(nullable = false, unique = true)
 	private String slug;
 
-	private int duree;
+	private Double duree;
 
 	@Column(columnDefinition = "TEXT")
 	private String objectifsPedagogique;
@@ -46,11 +46,11 @@ public class Formation implements Serializable {
 		this.titre = titre;
 	}
 
-	public int getDuree() {
+	public Double getDuree() {
 		return duree;
 	}
 
-	public void setDuree(int duree) {
+	public void setDuree(Double duree) {
 		this.duree = duree;
 	}
 
