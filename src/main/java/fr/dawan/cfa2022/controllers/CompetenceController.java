@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.dawan.cfa2022.dto.CompetenceDto;
 import fr.dawan.cfa2022.services.CompetenceService;
+import io.micrometer.core.instrument.search.Search;
 
 @RestController
 @RequestMapping("/competences")
@@ -24,9 +25,12 @@ public class CompetenceController extends GenericController<CompetenceDto> {
 	public List<CompetenceDto> getAllByTitrePro(@PathVariable("id") long id ) {
 		return ((CompetenceService) service).getAllByTitreProfessionnelId(id);
 	}
-	@GetMapping(value="/blocCompetence/{id}",produces = "application/json")
-	public List<CompetenceDto> getAllByBlocComptenceId(@PathVariable("id") long id ) {
-		return ((CompetenceService) service).getAllByBlocComptenceId(id);
+	@GetMapping(value={"/blocCompetence/{id}","/blocCompetence/{id}/{search}"},produces = "application/json")
+	public List<CompetenceDto> getAllByBlocComptenceId(@PathVariable("id") long id ,@PathVariable("search") Optional<String> search) {
+		if (search.isPresent()) {
+			return ((CompetenceService) service).getAllByBlocComptenceId(id,search.get());
+		}
+		return ((CompetenceService) service).getAllByBlocComptenceId(id,"");
 	}
 	@GetMapping(value= {"/{page}/{size}", "/{page}/{size}/{search}"}, produces = "application/json")
 	public List<CompetenceDto> getAllByPage(

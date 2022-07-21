@@ -24,8 +24,8 @@ public class BlocCompetencesServiceImpl implements BlocCompetencesService {
 	private BlocCompetencesRepository blocCompetencesRepository;
 
 	@Override
-	public List<BlocCompetencesDto> getAllByTitreProId(long id) {
-		List<BlocCompetences> BlocsCompetences = blocCompetencesRepository.getAllByTitreProfessionnelId(id);
+	public List<BlocCompetencesDto> getAllByTitreProId(long id, String search) {
+		List<BlocCompetences> BlocsCompetences = blocCompetencesRepository.getAllByTitreProfessionnelId(id,search, search);
 		List<BlocCompetencesDto> result = new ArrayList<BlocCompetencesDto>();
 		for (BlocCompetences t : BlocsCompetences) {
 			result.add(DtoTools.convert(t, BlocCompetencesDto.class));

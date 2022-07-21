@@ -20,9 +20,12 @@ public class BlocCompetenceController extends GenericController<BlocCompetencesD
 	public BlocCompetenceController(BlocCompetencesService service) {
 		super(service);
 	}
-	@GetMapping(value="/titresProfessionnel/{id}",produces = "application/json")
-	public List<BlocCompetencesDto> getAllByTitrePro(@PathVariable("id") long id ) {
-		return ((BlocCompetencesService) service).getAllByTitreProId(id);
+	@GetMapping(value={"/titresProfessionnel/{id}" ,"/titresProfessionnel/{id}/{search}" },produces = "application/json")
+	public List<BlocCompetencesDto> getAllByTitrePro(@PathVariable("id") long id, @PathVariable("search") Optional<String> search ) {
+		if (search.isPresent()) {
+			return ((BlocCompetencesService) service).getAllByTitreProId(id,search.get());
+		}
+		return ((BlocCompetencesService) service).getAllByTitreProId(id,"");
 	}
 	@GetMapping(value= {"/{page}/{size}", "/{page}/{size}/{search}"}, produces = "application/json")
 	public List<BlocCompetencesDto> getAllByPage(

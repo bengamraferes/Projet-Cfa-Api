@@ -62,8 +62,8 @@ public class CompetenceServiceImpl implements CompetenceService {
 		return result;
 	}
 	@Override
-	public List<CompetenceDto> getAllByBlocComptenceId(long id) {
-		List<Competence> competences = competenceRepository.getAllByBlocCompetencesId(id);
+	public List<CompetenceDto> getAllByBlocComptenceId(long id, String search ) {
+		List<Competence> competences = competenceRepository.getAllByBlocCompetencesId(id, search, search);
 		List<CompetenceDto> result = new ArrayList<CompetenceDto>();
 		for (Competence c : competences) {
 			result.add(DtoTools.convert(c, CompetenceDto.class));

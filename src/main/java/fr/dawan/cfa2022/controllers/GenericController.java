@@ -29,7 +29,7 @@ public abstract class GenericController<TDto> {
 	public TDto findById(@PathVariable("id") long id){
 		return service.getById(id);
 	}
-	@DeleteMapping(value = "/{id}", produces = "text/plain")
+	@DeleteMapping(value = "/{id}", produces = "application/json")
 	public ResponseEntity<StringDto> deleteById(@PathVariable(value = "id") long id) {
 		try {
 			service.delete(id);
