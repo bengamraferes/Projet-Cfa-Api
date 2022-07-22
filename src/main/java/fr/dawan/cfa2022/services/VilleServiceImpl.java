@@ -1,6 +1,10 @@
 package fr.dawan.cfa2022.services;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -9,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.data.domain.PageRequest;
+
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -92,6 +98,20 @@ public class VilleServiceImpl implements VilleService {
 			}
 		}
 		return nb;
+	}
+
+	@Override
+	public List<VilleDto> getAll(int page, int max, String search) {
+		
+		List<Ville> villes = villeRepository.findAllByNomContainingOrSlugContaining(search,search,PageRequest.of(page, max)).get().collect(Collectors.toList());
+		List<VilleDto> VilleDto = new ArrayList<>();
+		
+		for (Ville ville : villes) {
+			
+			VilleDto.add(DtoTools.convert(ville, VilleDto.class));
+			
+		}
+		return VilleDto;
 	}
 
 }

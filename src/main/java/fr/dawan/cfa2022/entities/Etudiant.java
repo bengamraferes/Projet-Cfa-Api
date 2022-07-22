@@ -36,4 +36,33 @@ public class Etudiant  extends Utilisateur  {
 	
 
 }
-	
+//proposé par Mohamed
+//Dans la classe promotion :
+//
+//@ManyToMany(cascade = CascadeType.ALL)
+//	private List<Etudiant> etudiants;
+//    
+//    
+//Dans la classe étudiants :
+//	@ManyToMany(mappedBy = "etudiants", cascade = CascadeType.ALL)
+//	private List<Promotion> promotions;
+//    
+//Dans le promotionServiceImpl : 
+//@Override
+//	public PromotionDto saveOrUpdate(PromotionDto uDto) throws Exception {
+//		Promotion promo = DtoTools.convert(uDto, Promotion.class);
+//		if (uDto.getEtudiantsId() != null) {
+//			for (long id : uDto.getEtudiantsId()) {
+//				Optional<Etudiant> opt = etudiantRepository.findById(id);
+//				if (opt.isPresent()) {
+//					Etudiant etu = opt.get();
+//					promo.getEtudiants().add(etu);
+//					etu.getPromotions().add(promo);
+//				}
+//				promo.getEtudiants().remove(null);
+//			}
+//		}
+//		promo = repository.saveAndFlush(promo);
+//		return DtoTools.convert(promo, PromotionDto.class);
+//	}
+    

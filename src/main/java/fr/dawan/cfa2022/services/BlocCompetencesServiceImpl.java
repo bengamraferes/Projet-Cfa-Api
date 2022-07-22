@@ -1,5 +1,4 @@
 package fr.dawan.cfa2022.services;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +17,7 @@ import fr.dawan.cfa2022.entities.BlocCompetences;
 import fr.dawan.cfa2022.repositories.BlocCompetencesRepository;
 @Service
 @Transactional
+
 public class BlocCompetencesServiceImpl implements BlocCompetencesService {
 
 	@Autowired
