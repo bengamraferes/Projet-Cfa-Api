@@ -20,7 +20,7 @@ public class PromotionDto implements Serializable  {
 	private long villeId;
 	
 
-	private long versionId;
+	private long version;
 	
 	private String villeNom;
 	
@@ -78,12 +78,12 @@ public class PromotionDto implements Serializable  {
 		this.villeId = villeId;
 	}
 
-	public long getVersionId() {
-		return versionId;
+	public long getVersion() {
+		return version;
 	}
 
-	public void setVersionId(long versionId) {
-		this.versionId = versionId;
+	public void setVersion(long versionId) {
+		this.version = versionId;
 	}
 
 	public String getVilleNom() {

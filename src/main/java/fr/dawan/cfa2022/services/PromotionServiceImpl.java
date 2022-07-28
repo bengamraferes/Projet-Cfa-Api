@@ -37,24 +37,42 @@ public class PromotionServiceImpl implements PromotionService{
 		return null;
 		
 	}
-
+	//Dans le promotionServiceImpl : 
 	@Override
-	public PromotionDto saveOrUpdate(PromotionDto tDto) throws Exception {
-		Promotion p = DtoTools.convert(tDto, Promotion.class);
-		
-		if (!tDto.getEtudiantsId().isEmpty() || tDto.getEtudiantsId() != null) {
-			List<Etudiant> etudiants = new ArrayList<Etudiant>();
-			for (long idE : tDto.getEtudiantsId()) {
-				
-				etudiants.add(etudiantRepository.getOne(idE));
+		public PromotionDto saveOrUpdate(PromotionDto uDto) throws Exception {
+			Promotion promo = DtoTools.convert(uDto, Promotion.class);
+			if (uDto.getEtudiantsId() != null) {
+				for (long id : uDto.getEtudiantsId()) {
+					Optional<Etudiant> opt = etudiantRepository.findById(id);
+					if (opt.isPresent()) {
+						Etudiant etu = opt.get();
+						promo.getEtudiants().add(etu);
+						etu.getPromotions().add(promo);
+					}
+					promo.getEtudiants().remove(null);
+				}
 			}
-			p.setEtudiants(etudiants);
+			promo = promotionRepository.saveAndFlush(promo);
+			return DtoTools.convert(promo, PromotionDto.class);
 		}
-		p = promotionRepository.saveAndFlush(p);
-	
-		return DtoTools.convert(p, PromotionDto.class);
 
-	}
+//	@Override
+//	public PromotionDto saveOrUpdate(PromotionDto tDto) throws Exception {
+//		Promotion p = DtoTools.convert(tDto, Promotion.class);
+//		
+//		if (!tDto.getEtudiantsId().isEmpty() || tDto.getEtudiantsId() != null) {
+//			List<Etudiant> etudiants = new ArrayList<Etudiant>();
+//			for (long idE : tDto.getEtudiantsId()) {
+//				
+//				etudiants.add(etudiantRepository.getOne(idE));
+//			}
+//			p.setEtudiants(etudiants);
+//		}
+//		p = promotionRepository.saveAndFlush(p);
+//	
+//		return DtoTools.convert(p, PromotionDto.class);
+//
+//	}
 
 	@Override
 	public CountDto count(String search) {
