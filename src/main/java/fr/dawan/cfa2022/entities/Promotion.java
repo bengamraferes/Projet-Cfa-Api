@@ -32,7 +32,7 @@ public class Promotion implements Serializable {
 	@ManyToOne
 	private Ville ville;
 	
-    @ManyToMany(mappedBy="promotions" ,cascade = CascadeType.ALL) 
+    @ManyToMany(mappedBy="promotions" ,cascade = {CascadeType.PERSIST, CascadeType.MERGE}) 
     private List<Etudiant> etudiants ;
     
 

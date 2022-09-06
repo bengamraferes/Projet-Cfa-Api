@@ -23,7 +23,7 @@ public class EtudiantController extends GenericController<EtudiantDto> {
 		super(service);
 	}
 	@GetMapping(value="/promotion/{id}",produces = "application/json")
-	public List<EtudiantDto> getAllByTitrePro(@PathVariable("id") long id ) {
+	public List<EtudiantDto> getAllPromoId(@PathVariable("id") long id ) {
 		return ((EtudiantService) service).getAllByPromotionId(id);
 	}
 	@GetMapping(value= {"/{page}/{size}", "/{page}/{size}/{search}"}, produces = "application/json")

@@ -13,13 +13,14 @@ public class EpreuveDto implements Serializable {
 	private String titre;
 
 	private String description;
-	
 
 	private Type type;
 	
 	private int version;
 	
 	private long  blocCompetencesId;
+	
+	private String blocCompetencesTitre;
 	 
 	public long getId() {
 		return id;
@@ -56,6 +57,12 @@ public class EpreuveDto implements Serializable {
 	}
 	public void setBlocCompetencesId(long blocCompetencesId) {
 		this.blocCompetencesId = blocCompetencesId;
+	}
+	public String getBlocCompetencesTitre() {
+		return blocCompetencesTitre;
+	}
+	public void setBlocCompetencesTitre(String blocCompetencesTitre) {
+		this.blocCompetencesTitre = blocCompetencesTitre;
 	}
 
 

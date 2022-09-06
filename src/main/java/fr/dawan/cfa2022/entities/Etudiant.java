@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Etudiant  extends Utilisateur  {
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	private List<Promotion> promotions ;
 
 	public List<Promotion> getPromotions() {

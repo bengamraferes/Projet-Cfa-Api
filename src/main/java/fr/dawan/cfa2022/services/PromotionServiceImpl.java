@@ -44,11 +44,15 @@ public class PromotionServiceImpl implements PromotionService{
 			if (uDto.getEtudiantsId() != null) {
 				for (long id : uDto.getEtudiantsId()) {
 					Optional<Etudiant> opt = etudiantRepository.findById(id);
+					List<Etudiant> etudiantsToSave = new ArrayList<Etudiant>();
 					if (opt.isPresent()) {
 						Etudiant etu = opt.get();
-						promo.getEtudiants().add(etu);
-						etu.getPromotions().add(promo);
+						etudiantsToSave.add(etu);
+						if (!etu.getPromotionsId().contains(promo.getId())) {
+							etu.getPromotions().add(promo);
+						}
 					}
+					promo.setEtudiants(etudiantsToSave);
 					promo.getEtudiants().remove(null);
 				}
 			}
