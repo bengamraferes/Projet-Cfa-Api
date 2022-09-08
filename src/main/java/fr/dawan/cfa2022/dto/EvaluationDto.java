@@ -14,6 +14,17 @@ public class EvaluationDto implements Serializable {
 	private long etudiantId;
 	
 	private double note;
+	
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	private int version;
+
 
 	public long getId() {
 		return id;

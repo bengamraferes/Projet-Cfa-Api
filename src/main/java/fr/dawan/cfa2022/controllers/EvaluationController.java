@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.dawan.cfa2022.dto.CountAvgDto;
+import fr.dawan.cfa2022.dto.EpreuveDto;
 import fr.dawan.cfa2022.dto.EvaluationDto;
 import fr.dawan.cfa2022.services.EvaluationService;
 
@@ -27,6 +28,11 @@ public class EvaluationController extends GenericController<EvaluationDto> {
 	@GetMapping(value="/promotion/{id}",produces = "application/json")
 	public List<EvaluationDto> findAllByPromotionId(@PathVariable("id") long id ) {
 		return ((EvaluationService) service).findAllByPromotionId(id);
+	}
+	@GetMapping(value = "byEtudiantAndEpreuve/{idEtudiant}/{idEpreuve}")
+	public EvaluationDto getByEtudiantAndEpreuve(@PathVariable("idEtudiant") long idEtudiant,@PathVariable("idEpreuve") long idEpreuve) {
+		return ((EvaluationService) service).findAllByEtudiantIdAndEpreuveId(idEtudiant, idEpreuve);
+		
 	}
 	@GetMapping(value="/avg/etudiantByPromotion/{idEtudiant}/{idPromotion}",produces = "application/json")
 	public CountAvgDto getAvgByEtudiantIdAndPromotionId(@PathVariable("idEtudiant") long idEtudiant, @PathVariable("idPromotion") long idPromotion ) {

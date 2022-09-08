@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 
 @SuppressWarnings("serial")
 @Entity
@@ -24,6 +25,17 @@ public class Evaluation implements Serializable  {
 	
 
 	private double note;
+	
+	@Version
+	private int version;
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
 
 	public long getId() {
 		return id;

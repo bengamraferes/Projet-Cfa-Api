@@ -1,6 +1,7 @@
  package fr.dawan.cfa2022.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -31,6 +32,9 @@ public interface EvaluationRepository extends JpaRepository<Evaluation,Long> {
 	
 	@Query("SELECT AVG(e.note) FROM Evaluation e JOIN e.etudiant etu WHERE etu.id= :etudiantId AND e.epreuve.blocCompetences.id = :blocCompetencesId")
 	double getAvgByEtudiantIdAndBlocCompId(@Param("etudiantId") long etudiantId, @Param("blocCompetencesId") long blocCompetencesId);
+
+
+	Optional<Evaluation> getByEtudiantIdAndEpreuveId(long idEtudiant, long idEpreuve);
 	
 //	@Query("SELECT COUNT(a) FROM Absence a JOIN a.etudiant e JOIN e.utilisateur u WHERE u.nom LIKE :search OR u.prenom LIKE :search")
 //	long countByUtilisateurEtudiantNomOrPrenomContaining(String search);

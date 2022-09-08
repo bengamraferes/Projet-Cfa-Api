@@ -102,6 +102,16 @@ public class EvaluationServiceImpl implements EvaluationService {
 		return result;
 	}
 
+	@Override
+	public EvaluationDto findAllByEtudiantIdAndEpreuveId(long idEtudiant, long idEpreuve) {
+		Optional<Evaluation> evaOpt = evaluationRepository.getByEtudiantIdAndEpreuveId(idEtudiant,idEpreuve);
+		if (evaOpt.isPresent()) {
+			return DtoTools.convert(evaOpt.get(), EvaluationDto.class);
+		}
+		
+		return null;
+	}
+
 
 
 }

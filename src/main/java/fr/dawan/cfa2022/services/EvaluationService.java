@@ -18,4 +18,6 @@ public interface EvaluationService extends GenericService<EvaluationDto> {
 	CountAvgDto getAvgByEtudiantIdAndBlocCompId( long etudiantId,long blocCompetencesId);
 	
 	List<EvaluationDto> findAllByPromotionId(long promotionId);
+	
+	EvaluationDto findAllByEtudiantIdAndEpreuveId(long idEtudiant, long idEpreuve);
 }
