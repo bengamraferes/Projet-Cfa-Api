@@ -2,6 +2,7 @@ package fr.dawan.cfa2022.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,10 @@ public class Positionnement implements Serializable {
 	@ManyToOne
 	private Etudiant etudiant;
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.PERSIST})
 	private Intervention intervention;
 	
 	@ManyToOne

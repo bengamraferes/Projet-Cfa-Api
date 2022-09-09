@@ -159,7 +159,7 @@ public class GeneratorServiceImpl implements GeneratorService {
 		List<Intervention> interventions = interventionRepository.getAllByPromotionId(idPromotion);
 
 		if (interventions.isEmpty() || interventions == null)
-			throw new Exception("Pas d'interventions encore pour cette promotion non trouvé");
+			throw new Exception("Pas d'interventions pour cette promotion");
 
 		Map<String, List<?>> gp = new HashMap<String, List<?>>();
 		List<GrillePositionnementDto> grillesPositionnements = new ArrayList<GrillePositionnementDto>();
@@ -189,7 +189,7 @@ public class GeneratorServiceImpl implements GeneratorService {
 
 		String htmlContent = FreeMarkerTemplateUtils.processTemplateIntoString(template, gp);
 
-		String outputPdf = storageFolder + "/GrillePositionnement.pdf";
+		String outputPdf = storageFolder + "/GrillePositionnement"+promotion.get().getTitreProfessionnel().getTitre() +".pdf";
 		ToPdf.convertHtmlToPdf(htmlContent, outputPdf);
 
 		return outputPdf;

@@ -2,6 +2,7 @@ package fr.dawan.cfa2022.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,10 @@ public class Evaluation implements Serializable  {
 	@ManyToOne
 	private Epreuve epreuve;
 	
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.PERSIST})
 	private Etudiant etudiant;
 	
 

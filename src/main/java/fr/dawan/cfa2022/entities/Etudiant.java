@@ -5,6 +5,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
@@ -12,7 +13,10 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Etudiant  extends Utilisateur  {
 
-	@ManyToMany
+	@ManyToMany(mappedBy = "etudiants", cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.PERSIST})
 	private List<Promotion> promotions ;
 
 	public List<Promotion> getPromotions() {
